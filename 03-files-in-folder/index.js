@@ -1,7 +1,7 @@
-const path = require("path");
-const fs = require("fs/promises");
+const path = require('path');
+const fs = require('fs/promises');
 
-const dir = path.join(__dirname, "secret-folder");
+const dir = path.join(__dirname, 'secret-folder');
 
 async function getFiles(dir) {
   const files = await fs.readdir(dir, { withFileTypes: true });
