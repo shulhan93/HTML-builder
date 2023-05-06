@@ -1,20 +1,20 @@
-const path = require("path");
-const fs = require("fs/promises");
+const path = require('path');
+const fs = require('fs/promises');
 
-const dirSrc = path.join(__dirname, "styles");
-const dirDist = path.join(__dirname, "project-dist");
+const dirSrc = path.join(__dirname, 'styles');
+const dirDist = path.join(__dirname, 'project-dist');
 
 const getStyles = async () => {
   const styles = (await fs.readdir(dirSrc)).filter(
-    (file) => path.extname(file) === ".css"
+    (file) => path.extname(file) === '.css'
   );
 
   return styles;
 };
 
 const createBuildFile = async () => {
-  await fs.open(path.join(dirDist, "bundle.css"), "w");
-  return path.join(dirDist, "bundle.css");
+  await fs.open(path.join(dirDist, 'bundle.css'), 'w');
+  return path.join(dirDist, 'bundle.css');
 };
 
 const buildCssBundle = async () => {
